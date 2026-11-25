@@ -1,0 +1,121 @@
+
+/* =================================
+   PAGE TRANSITIONS
+================================= */
+
+/* Smooth page entrance */
+
+body {
+    animation: pageEnter 0.2s ease both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+        
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        
+    }
+}
+
+
+/* =================================
+   PAGE EXIT TRANSITION
+================================= */
+
+/* Applied when navigating through internal links */
+
+body.page-exit {
+    animation: pageExit 0.2s ease forwards;
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-12px);
+    
+    }
+}
+
+
+/* =================================
+   NAVIGATION TRANSITIONS
+================================= */
+
+.navigation .nav-link {
+    transition:
+        background 0.6s ease,
+        color 0.6s ease,
+        transform 0.6s ease;
+}
+
+.navigation .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   IMAGE TRANSITIONS
+================================= */
+
+.profile-image {
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+.profile-image:hover {
+    transform: translateX(-50%) scale(1.03);
+}
+
+
+/* =================================
+   CONTENT TRANSITIONS
+================================= */
+
+.about-content,
+.about-details {
+    animation: contentEnter 1.3s ease both;
+}
+
+.about-details {
+    animation-delay: 0.2s;
+}
+
+@keyframes contentEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
